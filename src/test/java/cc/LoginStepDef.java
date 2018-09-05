@@ -16,15 +16,18 @@ public class LoginStepDef {
 
     private WebDriver driver;
     
-	@Before
-    public void before() {
-	System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
-    driver = new ChromeDriver();
-    driver.navigate().to("http://72.52.222.78:8180/pc/PolicyCenter.do");
-}
+    public LoginStepDef() {
+    	System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
+        driver = new ChromeDriver();  	
+    }
+    
+//	@Before
+//    public void before() {
+//	}
 	
 	@Given("I am on the Login page")
 	public void i_am_on_the_Login_page() {
+        driver.navigate().to("http://72.52.222.78:8180/pc/PolicyCenter.do");  
 	}
 
 	@When("I fill in username with {string} and password with {string}")
